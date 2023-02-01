@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link rel="shortcut icon" href="https://www.pinclipart.com/picdir/big/555-5555673_music-video-photograph-hashtag-here-with-me-whatsapp.png" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .hide {
+        display: none;
+      }
+      .error {
+        color: red;
+      }
+      .wrapper {
+        border: 3px solid #fcb045;
+        padding: 20px;
+      }
+
+      .blue {
+        color: rgb(0, 132, 255);
+      }
+      button {
+        width: 220px;
+        background-image: linear-gradient(#833ab4, #fd1d1d, #fcb045);
+        border-radius: 20px;
+      }
+      button:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container text-center">
+      <div class="row m-4" id="image1_div">
+        <div class="col mx-2">
+          <button id="img-1" onclick="image1()"><img id="i1" src="https://www.iconpacks.net/icons/2/free-click-icon-2384-thumb.png" width="200" alt="This is 1st image" /></button>
+        </div>
+        <div class="col mx-2">
+          <button id="img-2" onclick="image2()"><img id="i2" src="https://www.iconpacks.net/icons/2/free-click-icon-2384-thumb.png" width="200" alt="This is 2nd image" /></button>
+        </div>
+        <div class="col mx-2">
+          <button id="img-3" onclick="image3()"><img id="i3" src="https://www.iconpacks.net/icons/2/free-click-icon-2384-thumb.png" width="200" alt="This is 3rd image" /></button>
+        </div>
+        <div class="col mx-2">
+          <button id="img-4" onclick="image4()"><img id="i4" src="https://www.iconpacks.net/icons/2/free-click-icon-2384-thumb.png" width="200" alt="This is 4th image" /></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------------------------------------------------------------- -->
+    <!-- Form Validation -->
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col-6 mx-2">
+          <div class="col-12 clickError hide">
+            <h3 id="clickError">Please click on Image 1 fill all the details first</h3>
+          </div>
+          <!-- Form Validation -->
+
+          <div class="form wrapper hide">
+            <form class="signup">
+              <fieldset>
+                <legend>User's Details</legend>
+                <br />
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" />
+                <br />
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email-ID" />
+                <br />
+                <label for="username">Username</label>
+                <input type="username" class="form-control" name="username" id="username" placeholder="Username" />
+                <br />
+                <p class="error"></p>
+
+                <input class="btn btn-primary" type="submit" />
+              </fieldset>
+            </form>
+          </div>
+
+          <!-- --------------------------------------------  -->
+
+          <!-- user-data  -->
+          <div class="user-data wrapper hide">
+            <h5>Name : <span class="error" id="valName"></span></h5>
+            <br /><br />
+            <h5>Username : <span class="error" id="valUserName"></span></h5>
+          </div>
+
+          <!-- --------------------------------------------  -->
+
+          <!-- dice-game  -->
+
+          <div class="diceGame text-center " id="diceWthScore">
+            <p>Attempts left : <span id="attemptsLeft">0</span></p>
+            <br />
+            <div class="col mx-2">
+              <button id="dice-Image" onclick="image_Dice()"><img src="https://gilkalai.files.wordpress.com/2017/09/dice.png" width="200" alt="" /></button><br /><br />
+              <p>Remaining Dice Clicks: <span id="diceClicks">3</span></p>
+              <p>Total score is: <span id="score">0</span></p>
+            </div>
+          </div>
+          <!-- --------------------------------------------  -->
+
+          <!-- generated coupon  -->
+          <div class="userCoupon text-center pt-5 hide">
+            <h5>Your Coupon No. is : <span id="coupon_12"></span></h5>
+          </div>
+          <div id="congrats" class="col hide">
+            <img src="https://www.shutterstock.com/image-vector/congrats-lettering-typography-drawn-art-260nw-1041737950.jpg" width="550" alt="" />
+          </div>
+
+          <!-- --------------------------------------------  -->
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
